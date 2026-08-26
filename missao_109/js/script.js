@@ -38,3 +38,17 @@ campoTeclado.addEventListener('keydown', function(evento){
 campoTeclado.addEventListener('keyup', function(evento){
     registrarLog("[TECLA LIBERADA] Teclado: Evento 'keyup' disparado!");
 });
+
+// Evento de formulário: input
+const meuFormulario = document.getElementById('meu-formulario'); // onde ele procura no html o elemento que tem "meu-formulario" para guardar na constante meuFormulario
+const campoInput = document.getElementById('campo-input'); // onde ele procura no html o elemento que tem "campo-input" para guardar na constante campoInput
+
+campoInput.addEventListener('input', function() { // quando o usuário digita algo no campoInput ele executa a função abaixo
+    registrarLog(`[INPUT] Formulário: Evento 'input' disparado! -> Valor atual: "${campoInput.value}"`);
+});
+
+// Evento de formulário: submit (acesso ao evento de envio via id do formulário)
+meuFormulario.addEventListener('submit', function(evento) {
+    evento.preventDefault(); // Evita o envio do formulário para fins de demonstração
+    registrarLog("[SUBMIT] Formulário: Evento 'submit' disparado!");
+});
